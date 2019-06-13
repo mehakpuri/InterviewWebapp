@@ -1,0 +1,41 @@
+
+.dropdown {
+	font-size: 14px;
+	margin: 2px;
+}
+textarea{
+	margin: 2px;
+	
+}
+.page2__form{
+	
+	margin-left: 5%;
+}
+.page2__form_link {
+	color: blue;
+	font-size: 15px;
+	position: absolute;
+	margin: 10px;
+	margin-left:2%;
+	cursor: pointer;
+	border:0;
+	background-color: white;
+}
+.page2__form_link:hover{
+	text-decoration: underline;
+}
+#about-you, #add-education, #education{
+	margin-left: 5%;
+}
+#add-job, #work-history, #about{
+	margin-left: 4%;
+}
+#active-from{
+	margin-left: 26%;
+}
+#enrolled{
+	margin-left: 24%;
+}
+.input_extra{
+	margin-left: 20%;
+}

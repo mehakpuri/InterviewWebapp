@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 1</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../css/page1.css" />
+	<link rel="stylesheet" type="text/css" href="../css/page2.css" />
+	<link rel="stylesheet" type="text/css" href="../css/page3.css" />
+	<link rel="stylesheet" type="text/css" href="../css/page4.css" />
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+HK&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="header__container">
+		<div class="header__container_wrapper">
+			Sample Project
+		</div>
+	</div>
+
+	<div class="buttons__container">
+		<div class="buttons__container_wrapper">
+			<button class="buttons__container_wrapper_button" id="button-1" disabled>
+				1
+			</button>
+			<hr>
+			<!-- <label for="button-1">
+				Personal Info
+			</label> -->
+			<button class="buttons__container_wrapper_button" id="button-2" disabled>
+				2
+			</button>
+			<hr>
+			<button class="buttons__container_wrapper_button" id="button-3" disabled>
+				3
+			</button>
+			<hr>
+			<button class="buttons__container_wrapper_button" id="button-4" disabled>
+				4
+			</button>
+		</div>
+	</div>
+
+	<div class="label__container">
+		<div class="label__container_wrapper">
+			<span class="label__container_wrapper_text" id="text-1">
+				PERSONAL INFO
+			</span>
+			<!-- <label for="button-1">
+				Personal Info
+			</label> -->
+			<span class="label__container_wrapper_text" id="text-2">
+				PROFILE
+			</span>
+			<span class="label__container_wrapper_text" id="text-3">
+				EXPERTISE
+			</span>
+			<span class="label__container_wrapper_text" id="text-4">
+				INTERVIEW
+			</span>
+		</div>
+	</div>
+
+	<div class="body__container">
+		<div class="body__container_wrapper">
+			<div class="body__container_wrapper_page" id="page-1">
+				<form name="page-1_form" id="page-1_form" method="post">
+					<div class="page1__form">
+						<span class="input_field"> Name <input type="text" name="name" placeholder="Name" id="page1-name" required><br></span>
+						<span class="input_field"> Email <input type="email" name="email" placeholder="Email" id="page1-email" required><br></span>
+						<span class="input_field" id="radio"> 
+							What are you? 
+							<input type="radio" name="qualification" id="radio-uni" value="University Student" required>
+								University Student.
+							<input type="radio" name="qualification" id="radio-prof" value="Professional" required>
+								Professional
+							<br>
+						</span>
+						<span class="input_field"> University <input type="text" name="university" placeholder="University" id="page1-university" required><br></span>
+						<span class="input_field"> Major <input type="text" name="major" placeholder="Major" id="page1-major"><br></span>
+						<span class="input_field" id="select-graduation"> Graduation Date 
+							<select id="graduation" name="graduation">
+								<option>Select Graduation date</option>
+						
+							</select><br></span>
+						<span class="input_field" id="radio-2"> 
+							Do you have a tax id? 
+							<input type="radio" name="tax" id="radio-tax" value="I have a tax id">
+								I have a tax id
+							<input type="radio" name="tax" id="radio-notax" value="I don't have a tax id">
+								I don't have a tax id 
+							<br>
+						</span>
+						<span class="input_field"> Mobile <input type="text" name="mobile" id="page1-mobile" required><br></span>
+					</div>
+				</form>
+			</div>
+			<div class="body__container_wrapper_page" id="page-2">
+				<form name="page-2_form" id="page-2_form" method="post">
+					<div class="page2__form">
+						<span class="input_field" id="about-you"> About You <textarea name="about" id="about" rows="5" cols="22" placeholder="write a short bio" required></textarea><br></span>
+						<span class="input_field"> Teaching Experience <textarea name="experience" id="experience" rows="5" cols="22" required placeholder="tell us about your teaching experience"></textarea>	</span><br>
+						<span class="input_field" id="add-job"> Work History <input type="text" name="history" id="work-history" placeholder="Company"><br>
+								<select class="dropdown" id="active-from" name="active-from">
+									<option selected disabled value="">Active from</option>
+								</select> 
+								<select class="dropdown" id="active-to" name="active-to">
+									<option>Active to</option>
+								</select>
+						</span><br>
+
+						<a class="page2__form_link" id="link-job"> + Add Another job</a><br><br>
+						<span class="input_field" id="add-education"> Education <input type="text" name="education" id="education" placeholder="School"><br>
+							
+								<select class="dropdown" id="enrolled" name="enrolled">
+									<option value="" disabled selected>Enrolled</option>
+								</select> 
+								<select class="dropdown" id="graduated" name="graduated">
+									<option value="" disabled selected>Graduated</option>
+								</select>
+						</span><br>
+						<a class="page2__form_link" id="link-education"> + Add Another School</a><br><br>
+					</div>
+				</form>
+			</div>
+			<div class="body__container_wrapper_page" id="page-3">
+				<div class="page__3">
+					<div id="page3-sidebar" class="page3__items">
+					
+						  <div class="page3__items_list" id="sidebar-1"><a class="page3__items_link" id="link-1" href="#">Computer Software</a></div>
+						  <div class="page3__items_list" id="sidebar-2"><a class="page3__items_link" id="link-2" href="#">Computer Science</a></div>
+						  <div class="page3__items_list" id="sidebar-3"><a class="page3__items_link" id="link-3" href="#">Engineering</a></div>
+						  <!-- <div><a href="#">Language</a></div>
+						  <div><a href="#">Humanities</a></div> -->
+			
+					</div>
+					<div id="page3-1" class="page3__list" >
+						<div><input type="checkbox" name="software" class="page3__list_1" value="C++ Programming"> C++ Programming</div>
+						<div><input type="checkbox" name="software" class="page3__list_1" value="SQL"> SQL</div>
+						<div><input type="checkbox" name="software" class="page3__list_1" value="Database"> Database</div>
+						<div><input type="checkbox" name="software" class="page3__list_1" value="C++ Programming"> C++ Programming</div>
+						<div><input type="checkbox" name="software" class="page3__list_1" value="	PHP">PHP</div>
+						<div><input type="checkbox" name="software" class="page3__list_1" value="AngularJs"> AngularJs</div>
+						<div><input type="checkbox" name="software" class="page3__list_1" value="ExpressJs"> ExpressJs</div>
+						<div><input type="checkbox" name="software" class="page3__list_1" value="Ruby Programming"> Ruby Programming</div>
+						<div><input type="checkbox" name="software" class="page3__list_1" value="Git"> Git</div>
+						<div><input type="checkbox" name="software" class="page3__list_1" value="Sublime"> Sublime</div>
+						<div><input type="checkbox" name="software" class="page3__list_1" value="C Programming"> C Programming</div>
+						<div><input type="checkbox" name="software" class="page3__list_1" value="MySQL"> MySQL </div>
+						<div><input type="checkbox" name="software" class="page3__list_1" value="Assembly Language"> Assembly Language</div>
+						<div><input type="checkbox" name="software" class="page3__list_1" value="Visual Basic"> Visual Basic</div>
+						<div><input type="checkbox" name="software" class="page3__list_1" value="Heroku"> Heroku</div>
+						<div><input type="checkbox" name="software" class="page3__list_1" value="JavaScript Programming"> JavaScript Programming</div>
+						
+						
+					</div>
+					<div id="page3-2" class="page3__list" >
+						<div><input type="checkbox" name="software" class="page3__list_2" value="Java"> Java</div>
+						<div><input type="checkbox" name="software" class="page3__list_2" value="Machine Programming"> Machine Programming</div>
+						<div><input type="checkbox" name="software" class="page3__list_2" value="ios Programming"> ios Programming</div>
+						<div><input type="checkbox" name="software" class="page3__list_2" value="Android Programming"> Android Programming</div>
+						<div><input type="checkbox" name="software" class="page3__list_2" value="C++ Programming"> C++ Programming</div>
+						<div><input type="checkbox" name="software" class="page3__list_2" value="C++ Programming"> C++ Programming</div>
+						<div><input type="checkbox" name="software" class="page3__list_2" value="C++ Programming"> C++ Programming</div>
+						
+						
+					</div>
+					<div id="page3-3" class="page3__list" >
+						<div><input type="checkbox" name="software" class="page3__list_3" value="Web Development"> Web Development</div>
+						<div><input type="checkbox" name="software" class="page3__list_3" value="HTML5"> HTML5</div>
+						<div><input type="checkbox" name="software" class="page3__list_3" value="CSS"> CSS</div>
+						<div><input type="checkbox" name="software" class="page3__list_3" value="VueJs"> VueJs</div>
+						<div><input type="checkbox" name="software" class="page3__list_3" value="Python"> Python</div>
+						
+						
+						
+					</div>
+				</div>
+			</div>
+			<div class="body__container_wrapper_page" id="page-4">
+				<div class="page__4">
+					<div id="page4-sidebar" class="page4__items">
+					
+						 <div class="page4__items_ques" id="question-1">
+						  	<a class="page4__items_link" id="ques-link-1" href="#">1. Question #1 </a> 
+						  	<span class="page4__items_tick" id="ques-tick-1">&#10003; </span>
+						 </div>
+						 <div class="page4__items_ques" id="question-2">
+						  	<a class="page4__items_link" href="#" id="ques-link-2">2. Question #2 </a> 
+						  	<span class="page4__items_tick" id="ques-tick-2">&#10003; </span>
+						 </div>
+						 <div class="page4__items_ques" id="question-3">
+						 	<a class="page4__items_link" href="#" id="ques-link-3">3. Question #3 </a> 
+						 	<span class="page4__items_tick" id="ques-tick-3">&#10003; </span>
+						 </div>
+						 <div class="page4__items_ques" id="question-4">
+						 	<a class="page4__items_link" href="#" id="ques-link-4">4. Question #4 </a> 
+						 	<span class="page4__items_tick" id="ques-tick-4">&#10003; </span>
+						 </div>
+						
+						
+					</div>
+					<div class="page4__items">
+						<div id="page4-1" class="page4__items_wrapper" >
+							<div class="page4__items_heading" id="heading-ques-1"> Question 1 </div>
+							<textarea class="page4__items_text" id="textarea-1" rows="6" cols="65"></textarea>
+						</div>
+						<div id="page4-2" class="page4__items_wrapper" >
+							<div class="page4__items_heading" id="heading-ques-2"> Question 2 </div>
+							<textarea class="page4__items_text" id="textarea-2" rows="6" cols="65"></textarea>
+						</div>
+						<div id="page4-3" class="page4__items_wrapper" >
+							<div class="page4__items_heading" id="heading-ques-3"> Question 3 </div>
+							<textarea class="page4__items_text" id="textarea-3" rows="6" cols="65"></textarea>
+						</div>
+						<div id="page4-4" class="page4__items_wrapper" >
+							<div class="page4__items_heading" id="heading-ques-4"> Question 4 </div>
+							<textarea class="page4__items_text" id="textarea-4" rows="6" cols="65"></textarea>
+						</div>
+						<div class="page4__items_buttons">
+							<a href="#" class="page4_buttons" id="page4-button-prev">Previous Question</a>
+							<a href="#" class="page4_buttons" id="page4-button-next">Next Question</a>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer__container">
+		<div class="footer__container_wrapper">
+			<button class="footer__container_wrapper_buttons" id="button-previous">
+				&#8592; Previous
+			</button>
+			<button class="footer__container_wrapper_buttons" id="button-next">
+				Next &#8594;
+			</button>
+			<button class="footer__container_wrapper_buttons" id="button-submit">
+				Submit
+			</button>
+		</div>
+	</div>
+	<script src="../javascript/validation.js"></script>
+	<script src="../javascript/loading.js"></script>
+	<script src="../javascript/page4.js"></script>
+	<script src="../javascript/storage.js"></script>
+	<script src="../javascript/page3.js"></script>
+	<script src="../javascript/main.js"></script>
+
+</body>
+</html>
