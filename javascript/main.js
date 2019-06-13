@@ -2,6 +2,7 @@ var pages = { buttonId: 'button-1', prev: false, next: true, content: 'page-1', 
 bodyPages = []
 headerButtons = []
 
+// this function checks the visibility of various components present on the web page
 function checkVisibility(flag) {
 if(flag == 0){
 		if(pages.buttonId == 'button-1'){
@@ -65,12 +66,12 @@ window.onload= function() {
 
 	this.bodyPages = allPages
 
+	// checking if session storage contains elements
 	var btn = sessionStorage.getItem('buttonId')
 	if(btn!=null){
 		pages.buttonId = btn
 		pages.content = 'page-'+btn.split('-')[1]
 	}
-
 	var sidebar = sessionStorage.getItem('sidebarPage')
 	if(sidebar!=null){
 		pages.sidebarPage = sidebar
@@ -83,13 +84,13 @@ window.onload= function() {
 		pages.question = question
 		
 	}
-
 	page4_visibility(pages.question)
 	
 	for(var i=0;i<buttons.length;i++){
 		buttons[i].onclick = handleClick 
 	}
 
+	// click events on buttons and links of different pages
 	var links = document.getElementsByClassName('page2__form_link')
 	for(var i =0 ;i<links.length;i++){
 		links[i].onclick = handleClick
@@ -113,6 +114,7 @@ window.onload= function() {
 
 }
 
+// this function handles all the click events in this whole application
 function handleClick(e) {
 	if(e.target.id == "button-previous"){
 		var storedPageId = pages.content

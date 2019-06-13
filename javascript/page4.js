@@ -1,5 +1,6 @@
 var textbox = document.getElementsByClassName('page4__items_text')
 
+// this function is called when page 4 is loaded
 function page4_visibility(e){
 	console.log("in page 4 page4_visibility")
 	// console.log(e)
@@ -47,9 +48,9 @@ function page4_visibility(e){
 		textbox[i].onblur = checkEmpty
 	}
 	
-	
-
 }
+
+// this function is checking if the textboxes on page 4 are empty
 function checkEmpty() {
 	var empty = 0
 	for(var i =0;i<textbox.length;i++){

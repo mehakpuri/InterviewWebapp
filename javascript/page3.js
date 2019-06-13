@@ -1,3 +1,4 @@
+// thsi function is called when page 3 is loaded
 function page3_visibility(e){
 	console.log(e)
 	var listNumber = e.split('-')[1]

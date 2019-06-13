@@ -1,3 +1,4 @@
+// this function is used to add options to the select tag
 function addOptions() {
 	var startFrom = 1900;
 	var endFrom = new Date().getFullYear();
@@ -8,6 +9,8 @@ function addOptions() {
 	}
 	return options
 }
+
+// this function is called when page 1 is loaded
 function page1_load() {
 	console.log("in page 1 on load")
 	var start = 1900;
@@ -22,6 +25,7 @@ function page1_load() {
 	document.getElementById("graduation").innerHTML = options;
 }
 
+// this function is called when page 2 is loaded
 function page2_load(){
 	console.log("page 2 load ")
 	var options = addOptions()
@@ -30,6 +34,8 @@ function page2_load(){
 	document.getElementById("enrolled").innerHTML += options;
 	document.getElementById("graduated").innerHTML += options;
 }
+
+// this function creates new select dropdown for Work History field
 function createWorkHistory(){
 	console.log("creating")
 	var job = document.getElementById('add-job') 
@@ -62,6 +68,8 @@ function createWorkHistory(){
 	selectSecond.innerHTML += optionsList
 	job.appendChild(selectSecond)
 }
+
+// this function creates new select dropdown for Education field
 function createEducation(){
 	var education = document.getElementById('add-education') 
 	education.appendChild(document.createElement('br'))
