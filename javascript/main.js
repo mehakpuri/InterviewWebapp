@@ -86,6 +86,8 @@ window.onload= function() {
 
 	this.bodyPages = allPages
 
+	
+
 	// checking if session storage contains elements
 	var btn = sessionStorage.getItem('buttonId')
 	if(btn!=null){
@@ -129,6 +131,7 @@ window.onload= function() {
 		list_buttons[i].onclick = handleClick
 	}
 	
+	change()
 	fetchItems(pages.content,1)
 	checkVisibility(0)
 
@@ -137,6 +140,7 @@ window.onload= function() {
 // this function handles all the click events in this whole application
 function handleClick(e) {
 	if(e.target.id == "button-previous"){
+
 		var storedPageId = pages.content
 		var buttonIdName = pages.buttonId.split('-')
 		var value = parseInt(buttonIdName[1]) - 1
@@ -151,11 +155,13 @@ function handleClick(e) {
 					
 		saveValues(form,storedPageId)
 		fetchItems(pages.content,0)
+		change()
 	}
 	else if(e.target.id == "button-next"){
 		var flag = submitForm(pages.content)
 		// var flag = 0
 		if(flag==0){
+			
 			console.log("flag is zero")
 			var storedPageId = pages.content
 			var buttonIdName = pages.buttonId.split('-')
@@ -169,6 +175,7 @@ function handleClick(e) {
 			var form  = document.forms[name]
 			saveValues(form,storedPageId)
 			fetchItems(pages.content,0)
+			change()
 		}
 		
 	}
@@ -180,6 +187,8 @@ function handleClick(e) {
 		pages.content = 'page-5'
 		pages.buttonId = 'button-5'
 		flag = 0
+		console.log(sessionStorage)
+		sessionStorage.clear()
 
 	}
 	else if(e.target.id == 'button-home'){

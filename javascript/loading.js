@@ -16,7 +16,6 @@ function page1_load() {
 	var start = 1900;
 	var end = new Date().getFullYear() + 4;
 	var options = "";
-	// if(sessionStorage.getItem('page-1') == null)
 	options += "<option disabled selected value=''> Graduation Date </option>"
 	for(var year = end ; year >=start; year--){
   		options += "<option value="+year+">"+ year +"</option>";
@@ -38,7 +37,7 @@ function page2_load(){
 // this function creates new select dropdown for Work History field
 function createWorkHistory(){
 	console.log("creating")
-	var job = document.getElementById('page2-add-job') 
+	var job = document.getElementById('page2-add-job-wrapper') 
 	job.appendChild(document.createElement('br'))
 	var input = document.createElement('input')
 	input.className = 'input_extra'
@@ -71,6 +70,8 @@ function createWorkHistory(){
 	selectSecond.innerHTML += option
 	selectSecond.innerHTML += optionsList
 	span.appendChild(selectSecond)
+
+	change()
 }
 
 // this function creates new select dropdown for Education field
@@ -107,4 +108,6 @@ function createEducation(){
 	selectSecond.innerHTML += option
 	selectSecond.innerHTML += optionsList
 	span.appendChild(selectSecond)
+
+	change()
 }

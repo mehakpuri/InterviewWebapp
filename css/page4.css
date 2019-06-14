@@ -1,7 +1,6 @@
 .page__4{
 	display: flex;
 	flex-wrap: nowrap;
-	/*background-color:green;*/
 }
 #page4-sidebar {
 	  width: 32%;
@@ -10,9 +9,7 @@
 	  line-height: 35px;
 	  display: flex;
 	  flex-direction: column;
-	  
 }
-
 #page4-sidebar div {
   font-size: 16px;
   display: block;
@@ -67,13 +64,3 @@
 	float:right;
 	color: blue;
 }
-/*#pag4-2{
-	display: none;
-}
-#page4-3{
-	display: none;
-}
-#page4-4{
-	display: none;
-}
-*/

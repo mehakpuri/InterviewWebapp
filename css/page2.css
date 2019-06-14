@@ -1,19 +1,14 @@
 
 .dropdown {
 	font-size: 14px;
-	margin: 2px;
-	margin-bottom: 4%;
-}
-textarea{
-	margin: 2px;
-	
+	margin-bottom: 0;
+	margin: 2% 0;
+	/*margin-bottom: 4%;*/
 }
 .page2__form_link {
 	color: blue;
 	font-size: 15px;
 	position: absolute;
-	/*margin: 10px;*/
-	/*margin-left:2%;*/
 	cursor: pointer;
 	border:0;
 	background-color: white;
@@ -24,13 +19,13 @@ textarea{
 .page2__input_field_label{
 	width: 250px;
 	text-align: right;
-	margin: 1% 0;
+	/*margin: 1% 0;*/
 	font-size: 18px;
 }
 .page2__input_field_text{
 	width: 400px;
 	text-align: left;
-	margin: 0 4%;
+	margin: 1% 4%;
 	font-size: 18px;
 }
 .page2__link_container{
@@ -42,18 +37,9 @@ textarea{
 	margin-left: 3%;
 	text-align: center;
 }
-/*#about-you, #add-education, #education{
-	margin-left: 5%;
-}*/
-/*#add-job, #work-history, #about{
-	margin-left: 4%;
+.page2__form_error_alert{
+	display: none;
+	color: red;
+	font-style: italic;
+	margin-bottom:1%;
 }
-#active-from{
-	margin-left: 26%;
-}
-#enrolled{
-	margin-left: 24%;
-}
-.input_extra{
-	margin-left: 20%;
-}*/

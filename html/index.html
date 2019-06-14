@@ -81,14 +81,14 @@
 							</span>
 							<br>
 						</span>
-						<span class="page1__form_error_alert" id="page1-error-radio"></span><br>
+						<span class="page1__form_error_alert" id="page1-error-qualification"></span><br>
 						<span class="input_field">
 						 	<span class="page1__input_field_label">University</span> 
 						 	<span class="page1__input_field_text">
 						 		<input type="text" name="university" placeholder="University" id="page1-university" required>
 						 	</span><br>
 						 </span>
-						 <span class="page1__form_error_alert" id="page1-error-uni"></span><br>
+						 <span class="page1__form_error_alert" id="page1-error-university"></span><br>
 						<span class="input_field"> 
 							<span class="page1__input_field_label">Major</span> 
 							<span class="page1__input_field_text">
@@ -116,7 +116,7 @@
 							</span>
 							<br>
 						</span>
-						<span class="page1__form_error_alert" id="page1-error-radio"></span><br>
+						<span class="page1__form_error_alert" id="page1-error-tax"></span><br>
 						<span class="input_field"> 
 							<span class="page1__input_field_label">Mobile</span> 
 							<span class="page1__input_field_text">
@@ -136,42 +136,58 @@
 								<textarea name="about" id="about" rows="5" cols="22" placeholder="write a short bio" required></textarea>
 							</span>
 						<br></span>
+						<span class="page2__form_error_alert" id="page2-error-about"><br></span>
 						<span class="input_field"> 
 							<span class="page2__input_field_label"> Teaching Experience </span> 
-							<span class="page2__input_field_text"> <textarea name="experience" id="experience" rows="5" cols="22" required placeholder="tell us about your teaching experience"></textarea>	
-							</span>
-						</span><br>
+							<span class="page2__input_field_text"> <textarea name="experience" id="page2-experience" rows="5" cols="22" required placeholder="tell us about your teaching experience"></textarea>	
+							</span><br>
+						</span>
+						<span class="page2__form_error_alert" id="page2-error-experience"><br></span>
 						<span class="input_field" id="add-job"> 
-							<span class="page2__input_field_label"> Work History </span>
-							<span class="page2__input_field_text" id="page2-add-job"> 
-								<input type="text" name="history" id="work-history" placeholder="Company"><br>
-								<span>
-									<select class="dropdown" id="active-from" name="active-from">
-										<option selected disabled value="">Active from</option>
-									</select> 
-									<select class="dropdown" id="active-to" name="active-to">
-										<option selected disabled value="">Active to</option>
-									</select>
-								</span>
-							</span>
-						</span><br>
+							
+								<span class="page2__input_field_label"> Work History </span>
+								<span class="page2__input_field_text" id="page2-add-job"> 
+									<span id="page2-add-job-wrapper">
+										<input type="text" name="history" id="work-history" placeholder="Company"><br>
+										
+										<span>
+											<select class="dropdown" id="active-from" name="active-from">
+												<option selected disabled value="">Active from</option>
+											</select> 
+											<select class="dropdown" id="active-to" name="active-to">
+												<option selected disabled value="">Active to</option>
+											</select>
+										</span>
+									</span>
+								<span class="page2__form_error_alert" id="page2-error-history"><br></span>
+								<span class="page2__form_error_alert" id="page2-error-active"><br></span>
+							</span><br>
+							
+						</span>
 						<span class="page2__link_container">
 							<a class="page2__form_link" id="link-job"> + Add Another job</a>
 						</span><br><br>
 						<span class="input_field" id="add-education"> 
 							<span class="page2__input_field_label">Education </span>
 							<span class="page2__input_field_text" id="page2-add-education">
-								<input type="text" name="education" id="education" placeholder="School"><br>
-								<span>
-									<select class="dropdown" id="enrolled" name="enrolled">
-										<option value="" disabled selected>Enrolled</option>
-									</select> 
-									<select class="dropdown" id="graduated" name="graduated">
-										<option value="" disabled selected>Graduated</option>
-									</select>
+								<span id="page2-add-education-wrapper">
+									<input type="text" name="education" id="education" placeholder="School"><br>
+									
+									<span>
+										<select class="dropdown" id="enrolled" name="enrolled">
+											<option value="" disabled selected>Enrolled</option>
+										</select> 
+										<select class="dropdown" id="graduated" name="graduated">
+											<option value="" disabled selected>Graduated</option>
+										</select>
+									</span>
 								</span>
-							</span>
-						</span><br>
+
+								<span class="page2__form_error_alert" id="page2-error-education"><br></span>
+								<span class="page2__form_error_alert" id="page2-error-school"><br></span>
+							</span><br>
+
+						</span>
 						<span class="page2__link_container">
 							<a class="page2__form_link" id="link-education"> + Add Another School</a><br><br>
 						</span>
@@ -185,8 +201,7 @@
 						  <div class="page3__items_list" id="sidebar-1"><a class="page3__items_link" id="link-1" href="#">Computer Software</a></div>
 						  <div class="page3__items_list" id="sidebar-2"><a class="page3__items_link" id="link-2" href="#">Computer Science</a></div>
 						  <div class="page3__items_list" id="sidebar-3"><a class="page3__items_link" id="link-3" href="#">Engineering</a></div>
-						  <!-- <div><a href="#">Language</a></div>
-						  <div><a href="#">Humanities</a></div> -->
+		
 			
 					</div>
 					<div id="page3-1" class="page3__list" >
@@ -300,12 +315,13 @@
 			</button>
 		</div>
 	</div>
-	<script src="../javascript/validation.js"></script>
+	
 	<script src="../javascript/loading.js"></script>
 	<script src="../javascript/page4.js"></script>
 	<script src="../javascript/storage.js"></script>
 	<script src="../javascript/page3.js"></script>
 	<script src="../javascript/main.js"></script>
 	<script src="../javascript/ErrorAlerts.js"></script>
+	<script src="../javascript/validation.js"></script>
 </body>
 </html>

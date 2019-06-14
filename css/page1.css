@@ -24,4 +24,6 @@ input{
 }
 .page1__form_error_alert{
 	display: none;
+	color: red;
+	font-style: italic;
 }
