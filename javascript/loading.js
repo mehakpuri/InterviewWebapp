@@ -16,8 +16,8 @@ function page1_load() {
 	var start = 1900;
 	var end = new Date().getFullYear() + 4;
 	var options = "";
-	if(sessionStorage.getItem('page-1') == null)
-		options += "<option disabled selected value=''> Graduation Date </option>"
+	// if(sessionStorage.getItem('page-1') == null)
+	options += "<option disabled selected value=''> Graduation Date </option>"
 	for(var year = end ; year >=start; year--){
   		options += "<option value="+year+">"+ year +"</option>";
 	}
@@ -38,7 +38,7 @@ function page2_load(){
 // this function creates new select dropdown for Work History field
 function createWorkHistory(){
 	console.log("creating")
-	var job = document.getElementById('add-job') 
+	var job = document.getElementById('page2-add-job') 
 	job.appendChild(document.createElement('br'))
 	var input = document.createElement('input')
 	input.className = 'input_extra'
@@ -47,6 +47,10 @@ function createWorkHistory(){
 	input.name = 'history'
 	job.appendChild(input)
 	job.appendChild(document.createElement('br'))
+
+	var span = document.createElement('span')
+	job.appendChild(span)
+
 	var selectFirst = document.createElement('select')
 	selectFirst.className = 'dropdown'
 	selectFirst.id = 'active-from'
@@ -56,7 +60,7 @@ function createWorkHistory(){
 	var option = "<option selected disabled value=''> Active From </option"
 	selectFirst.innerHTML += option
 	selectFirst.innerHTML += optionsList
-	job.appendChild(selectFirst)
+	span.appendChild(selectFirst)
 
 	var selectSecond = document.createElement('select')
 	selectSecond.className = 'dropdown'
@@ -66,12 +70,12 @@ function createWorkHistory(){
 	var option = "<option selected disabled value=''> Active To </option"
 	selectSecond.innerHTML += option
 	selectSecond.innerHTML += optionsList
-	job.appendChild(selectSecond)
+	span.appendChild(selectSecond)
 }
 
 // this function creates new select dropdown for Education field
 function createEducation(){
-	var education = document.getElementById('add-education') 
+	var education = document.getElementById('page2-add-education') 
 	education.appendChild(document.createElement('br'))
 	var input = document.createElement('input')
 	input.className = 'input_extra'
@@ -80,6 +84,9 @@ function createEducation(){
 	input.name = 'education'
 	education.appendChild(input)
 	education.appendChild(document.createElement('br'))
+
+	var span = document.createElement('span')
+	education.appendChild(span)
 	var selectFirst = document.createElement('select')
 	selectFirst.className = 'dropdown'
 	selectFirst.id = 'enrolled'
@@ -89,7 +96,7 @@ function createEducation(){
 	var option = "<option disabled selected value=''> Enrolled </option"
 	selectFirst.innerHTML += option
 	selectFirst.innerHTML += optionsList
-	education.appendChild(selectFirst)
+	span.appendChild(selectFirst)
 
 	var selectSecond = document.createElement('select')
 	selectSecond.className = 'dropdown'
@@ -99,5 +106,5 @@ function createEducation(){
 	var option = "<option disabled selected value=''> Graduated </option"
 	selectSecond.innerHTML += option
 	selectSecond.innerHTML += optionsList
-	education.appendChild(selectSecond)
+	span.appendChild(selectSecond)
 }

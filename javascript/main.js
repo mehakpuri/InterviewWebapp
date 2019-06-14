@@ -5,7 +5,12 @@ headerButtons = []
 // this function checks the visibility of various components present on the web page
 function checkVisibility(flag) {
 if(flag == 0){
-		if(pages.buttonId == 'button-1'){
+		if(pages.buttonId == 'button-5'){
+			pages.prev = false
+			pages.next = false
+			document.getElementById('button-submit').style.display = 'none'
+		}
+		else if(pages.buttonId == 'button-1'){
 			pages.prev = false
 			pages.next = true
 			document.getElementById('button-submit').style.display = 'none'
@@ -20,6 +25,7 @@ if(flag == 0){
 			pages.next = true
 			document.getElementById('button-submit').style.display = 'none'
 		}
+
 		if(pages.prev == false)
 			document.getElementById("button-previous").style.display= "none"
 		else
@@ -29,30 +35,44 @@ if(flag == 0){
 		else
 			document.getElementById("button-next").style.display= "block"
 	
-	for(var j=0;j<bodyPages.length;j++){
-		if(bodyPages[j].id == pages.content){
-			document.getElementById(bodyPages[j].id).style.display = 'block'
+		console.log(pages.content)
+		for(var j=0;j<bodyPages.length;j++){
+			if(bodyPages[j].id == pages.content){
+				console.log("YES")
+				document.getElementById(bodyPages[j].id).style.display = 'block'
+				}
+			else
+				document.getElementById(bodyPages[j].id).style.display = 'none'
 			}
-		else
-			document.getElementById(bodyPages[j].id).style.display = 'none'
-		}
 
-	for(var i =0; i<headerButtons.length;i++){
-		if(headerButtons[i].id == pages.buttonId){
-			document.getElementById(pages.buttonId).style.backgroundColor = "orange"
-			document.getElementById(pages.buttonId).style.color = 'white'
-			document.getElementById(headerButtons[i].id).innerHTML = pages.buttonId.split('-')[1]
+	if(pages.buttonId != 'button-5'){
+		for(var i =0; i<headerButtons.length;i++){
+			if(headerButtons[i].id == pages.buttonId){
+				document.getElementById(pages.buttonId).style.backgroundColor = "orange"
+				document.getElementById(pages.buttonId).style.color = 'white'
+				document.getElementById(headerButtons[i].id).innerHTML = pages.buttonId.split('-')[1]
+			}
+			else{
+				document.getElementById(headerButtons[i].id).style.color = 'orange'
+				if(headerButtons[i].id.split('-')[1]<pages.buttonId.split('-')[1]){
+
+					document.getElementById(headerButtons[i].id).innerHTML = "&#10003;"
+					document.getElementById(headerButtons[i].id).style.backgroundColor = "white"
+				}
+				else{
+					document.getElementById(headerButtons[i].id).innerHTML = i+1
+					document.getElementById(headerButtons[i].id).style.backgroundColor = "white"
+				}
+				}
+			}
+			document.getElementById('buttons-container').style.display = 'flex'
+			document.getElementById('header-container').style.display = 'block'
 		}
 		else{
-			document.getElementById(headerButtons[i].id).style.color = 'orange'
-			if(headerButtons[i].id.split('-')[1]<pages.buttonId.split('-')[1]){
-
-				document.getElementById(headerButtons[i].id).innerHTML = "&#10003;"
-				document.getElementById(headerButtons[i].id).style.backgroundColor = "white"
-			}
-			else
-				document.getElementById(headerButtons[i].id).style.backgroundColor = "white"
-			}
+			// console.log("IN HERE")
+			document.getElementById('buttons-container').style.display = 'none'
+			document.getElementById('header-container').style.display = 'none'
+			console.log(bodyPages)
 		}
 		
 	}
@@ -134,7 +154,9 @@ function handleClick(e) {
 	}
 	else if(e.target.id == "button-next"){
 		var flag = submitForm(pages.content)
+		// var flag = 0
 		if(flag==0){
+			console.log("flag is zero")
 			var storedPageId = pages.content
 			var buttonIdName = pages.buttonId.split('-')
 			var value = parseInt(buttonIdName[1]) + 1
@@ -154,6 +176,16 @@ function handleClick(e) {
 		saveValues(null,pages.content)
 
 		alert("Your form is successfully submitted")
+
+		pages.content = 'page-5'
+		pages.buttonId = 'button-5'
+		flag = 0
+
+	}
+	else if(e.target.id == 'button-home'){
+		pages.content = 'page-1'
+		pages.buttonId = 'button-1'
+		flag = 0
 	}
 	else if(e.target.id == 'link-job'){
 		createWorkHistory()
@@ -174,11 +206,9 @@ function handleClick(e) {
 		page4_visibility(e.target.id)	
 	}
 	else if(e.target.className == 'page4_buttons'){
-		console.log(e.target.id)
 		if(e.target.id == 'page4-button-next'){
 			var quesNumber = parseInt(pages.question.split('-')[2]) + 1
 
-			console.log(quesNumber)
 			pages.question = 'ques-link-'+quesNumber
 			page4_visibility(pages.question)
 		}
@@ -188,8 +218,29 @@ function handleClick(e) {
 			page4_visibility(pages.question)	
 		}
 	}
-	else
-		pages.buttonId = e.target.id
+	else{
+		var jumpTo = e.target.id.split('-')[1]
+		var present = pages.buttonId.split('-')[1]
+
+		var value = parseInt(present) + 1
+		if(jumpTo > value)
+			alert("You cannot jump directly to that page")
+		else{
+			var flag = submitForm(pages.content)
+
+			if(flag == 0){
+				var storedPageId = pages.content
+				pages.buttonId = e.target.id
+				pages.content = 'page-'+jumpTo
+
+				var name = storedPageId + '_form'
+				var form  = document.forms[name]
+				saveValues(form,storedPageId)
+				fetchItems(pages.content,0)
+			}
+		}
+		
+	}
 
 	sessionStorage.setItem('buttonId',pages.buttonId)
 

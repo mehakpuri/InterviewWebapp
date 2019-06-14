@@ -9,8 +9,10 @@ body{
 	font-family: 'Noto Sans HK', sans-serif;
 }
 .buttons__container_wrapper{
-	
-	margin: 10px 0;
+	display: flex;
+	justify-content: center;
+	/*margin: 10px 0;*/
+	margin-left: 4%;
 	
 	text-align: center;
 }
@@ -19,7 +21,12 @@ body{
 	font-size: 18px;
 	margin-bottom: 0;
 	border-radius: 50%;
+	line-height: 30px;
 	cursor: pointer;
+}
+.buttons__container_wrapper_div{
+	display: flex;
+	flex-direction: column;
 }
 hr{
 	display: inline-block;
@@ -27,16 +34,17 @@ hr{
 	border:1px dashed;
 	color:grey;
 }
-.label__container_wrapper{
+/*.label__container_wrapper{
 	display: flex;
 	margin: 10px 0;
 	flex-wrap: wrap;
 	text-align: center;
-}
+}*/
 .label__container_wrapper_text{
-	font-size: 18px;
-	margin:0 9%;
-	font-size:10px;
+	font-size: 12px;
+	margin-top: 3%;
+	/*margin:0 9%;
+	font-size:10px;*/
 }
 .footer__container_wrapper_buttons{
 	font-size: 18px;
@@ -75,6 +83,15 @@ input[type="email"]{
 	font-style: italic;
 
 }
-/*button:active{
-	background-color:red;
-}*/
+.body__container_wrapper_page_heading{
+	margin-top: 10%;
+}
+#button-home{
+	width: 200px;
+	height:50px;
+	font-size: 15px;
+	background-color: orange;
+	color: white;
+	cursor: pointer;
+	margin: 5%;
+}

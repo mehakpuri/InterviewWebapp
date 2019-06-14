@@ -1,4 +1,5 @@
 function submitForm(pageId) {
+	console.log("in submit form")
 	var flag = 0
 	if(pageId == 'page-1' )
 		flag = commonValidation(pageId)
@@ -16,60 +17,59 @@ function submitForm(pageId) {
 	
 }
 function commonValidation(pageId) {
-	var field = document.forms[pageId+"_form"].getElementsByClassName("input_field")
+	var field = document.forms[pageId+"_form"].elements
 	var flag=0
 
 	for(var i=0;i<field.length;i++){
-		console.log(field[i].childNodes)
-		var str = field[i].childNodes[1].value.trim()
+		var str = field[i].value.trim()
 		if(str == ''){
-			console.log(str)
-			var fieldName = field[i].childNodes[1].name
+			var fieldName = field[i].name
 			alert(fieldName + " cannot be empty")
 			flag=1
 			break;
 		}
-		else if(field[i].childNodes[1].type == 'radio'){
+		else if(field[i].name == 'qualification'){
 			if(document.getElementById('radio-uni').checked == false && document.getElementById('radio-prof').checked == false)
 			{
-				alert("choose one option")
-				flag = 1
-				break;
-			}
-			else if(document.getElementById('radio-tax').checked == false && document.getElementById('radio-notax').checked == false)
-			{
-				alert("choose one option")
+				alert("choose one - university student or professional?")
 				flag = 1
 				break;
 			}
 		}
-		else if(field[i].childNodes[0].textContent == " Email "){
+		else if(field[i].name == 'tax'){
+			if(document.getElementById('radio-tax').checked == false && document.getElementById('radio-notax').checked == false)
+			{
+				alert("choose one - tax or no tax?")
+				flag = 1
+				break;
+			}
+		}
+		else if(field[i].type == "email"){
 			var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-			if (reg.test(field[i].childNodes[1].value) == false) 
+			if (reg.test(field[i].value) == false) 
         	{
             	alert('Invalid Email Address');
             	flag = 1
             	break;
         	}
 		}
-		else if(field[i].childNodes[0].textContent == " Mobile "){
-			var reg = /^([1-9]\d{9})$/;
-			if (reg.test(field[i].childNodes[1].value) == false) 
+		else if(field[i].id == "page1-mobile"){
+			var regex=/^[6-9]\d{9}$/;
+			if (reg.test(field[i].value) == false) 
         	{
             	alert('Invalid Mobile Number');
             	flag = 1
             	break;
         	}
 		}
-		else if(field[i].childNodes[1].type == 'select-one'){
-			// console.log("in select-one ")
-			// console.log(field[i].childNodes)
+		else if(field[i].type == 'select-one'){
+			
 		}
 		else{
 			var reg = /^[a-zA-Z ]*$/;
-			if (reg.test(field[i].childNodes[1].value) == false) 
+			if (reg.test(field[i].value) == false) 
         	{
-            	alert('Invalid format for '+ field[i].childNodes[0].textContent);
+            	alert('Invalid format for '+ field[i].name);
             	flag = 1
             	break;
         	}
@@ -82,7 +82,7 @@ function page2_Validation() {
 	var flag = 0
 	var form = document.forms['page-2_form'].elements
 
-
+	console.log("in page 2 validation ")
 	var extra_fields = document.getElementsByClassName('input_extra')
 	for(var i=0;i<extra_fields.length;i++){
 		if(extra_fields[i].value == ''){

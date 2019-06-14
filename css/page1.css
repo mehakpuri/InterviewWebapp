@@ -1,25 +1,27 @@
 input{
-	margin: 1%;
-}
-
-#graduation{
-	max-height: 200px;
-}
-.page1__form, #page1-name, #page1-email, #page1-major{
-	margin-left: 5%;
-}
-#radio{
-	margin-left: 10%
-}
-#radio-uni{
-	margin-left: 2%;
-}
-#select-graduation {
-	margin-left: -40px;
-}
-#radio-2, #radio-tax, #page1-mobile{
-	margin-left: 4%;
+	/*margin: 1%;*/
+	height: 15px;
 }
 #graduation{
-	width: 150px;
+	width:160px;
+	height: 25px;
+}
+.input_field{
+	display: flex;
+	justify-content: center;
+}
+.page1__input_field_text{
+	width: 400px;
+	text-align: left;
+	margin: 0 4%;
+	font-size: 18px;
+}
+.page1__input_field_label{
+	width: 250px;
+	text-align: right;
+	/*margin: 1% 0;*/
+	font-size: 18px;
+}
+.page1__form_error_alert{
+	display: none;
 }

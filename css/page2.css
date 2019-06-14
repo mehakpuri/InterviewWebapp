@@ -2,21 +2,18 @@
 .dropdown {
 	font-size: 14px;
 	margin: 2px;
+	margin-bottom: 4%;
 }
 textarea{
 	margin: 2px;
 	
 }
-.page2__form{
-	
-	margin-left: 5%;
-}
 .page2__form_link {
 	color: blue;
 	font-size: 15px;
 	position: absolute;
-	margin: 10px;
-	margin-left:2%;
+	/*margin: 10px;*/
+	/*margin-left:2%;*/
 	cursor: pointer;
 	border:0;
 	background-color: white;
@@ -24,10 +21,31 @@ textarea{
 .page2__form_link:hover{
 	text-decoration: underline;
 }
-#about-you, #add-education, #education{
-	margin-left: 5%;
+.page2__input_field_label{
+	width: 250px;
+	text-align: right;
+	margin: 1% 0;
+	font-size: 18px;
 }
-#add-job, #work-history, #about{
+.page2__input_field_text{
+	width: 400px;
+	text-align: left;
+	margin: 0 4%;
+	font-size: 18px;
+}
+.page2__link_container{
+	display: flex;
+	flex-direction: row reverse;
+}
+.page2__link_container a{
+	width: 50%;
+	margin-left: 3%;
+	text-align: center;
+}
+/*#about-you, #add-education, #education{
+	margin-left: 5%;
+}*/
+/*#add-job, #work-history, #about{
 	margin-left: 4%;
 }
 #active-from{
@@ -38,4 +56,4 @@ textarea{
 }
 .input_extra{
 	margin-left: 20%;
-}
+}*/

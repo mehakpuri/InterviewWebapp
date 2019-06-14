@@ -11,51 +11,48 @@
 </head>
 <body>
 	<div class="header__container">
-		<div class="header__container_wrapper">
+		<div class="header__container_wrapper" id="header-container">
 			Sample Project
 		</div>
 	</div>
 
 	<div class="buttons__container">
-		<div class="buttons__container_wrapper">
-			<button class="buttons__container_wrapper_button" id="button-1" disabled>
-				1
-			</button>
-			<hr>
-			<!-- <label for="button-1">
-				Personal Info
-			</label> -->
-			<button class="buttons__container_wrapper_button" id="button-2" disabled>
-				2
-			</button>
-			<hr>
-			<button class="buttons__container_wrapper_button" id="button-3" disabled>
-				3
-			</button>
-			<hr>
-			<button class="buttons__container_wrapper_button" id="button-4" disabled>
-				4
-			</button>
-		</div>
-	</div>
-
-	<div class="label__container">
-		<div class="label__container_wrapper">
-			<span class="label__container_wrapper_text" id="text-1">
-				PERSONAL INFO
-			</span>
-			<!-- <label for="button-1">
-				Personal Info
-			</label> -->
-			<span class="label__container_wrapper_text" id="text-2">
-				PROFILE
-			</span>
-			<span class="label__container_wrapper_text" id="text-3">
-				EXPERTISE
-			</span>
-			<span class="label__container_wrapper_text" id="text-4">
-				INTERVIEW
-			</span>
+		<div class="buttons__container_wrapper" id="buttons-container">
+			<div class="buttons__container_wrapper_div">
+				<button class="buttons__container_wrapper_button" id="button-1">
+					1
+				</button>
+				<span class="label__container_wrapper_text" id="text-1">
+					PERSONAL
+				</span>
+			</div>
+			<div><hr></div>
+			<div class="buttons__container_wrapper_div">
+				<button class="buttons__container_wrapper_button" id="button-2">
+					2
+				</button>
+				<span class="label__container_wrapper_text" id="text-2">
+					PROFILE
+				</span>
+			</div>
+			<div><hr></div>
+			<div class="buttons__container_wrapper_div">
+				<button class="buttons__container_wrapper_button" id="button-3">
+					3
+				</button>
+				<span class="label__container_wrapper_text" id="text-3">
+					EXPERTISE
+				</span>
+			</div>
+			<div><hr></div>
+			<div class="buttons__container_wrapper_div">
+				<button class="buttons__container_wrapper_button" id="button-4">
+					4
+				</button>
+				<span class="label__container_wrapper_text" id="text-4">
+					INTERVIEW
+				</span>
+			</div>
 		</div>
 	</div>
 
@@ -64,60 +61,120 @@
 			<div class="body__container_wrapper_page" id="page-1">
 				<form name="page-1_form" id="page-1_form" method="post">
 					<div class="page1__form">
-						<span class="input_field"> Name <input type="text" name="name" placeholder="Name" id="page1-name" required><br></span>
-						<span class="input_field"> Email <input type="email" name="email" placeholder="Email" id="page1-email" required><br></span>
+						<span class="input_field"> 
+							<span class="page1__input_field_label">Name</span> 
+							<span class="page1__input_field_text"><input type="text" name="name" placeholder="Name" id="page1-name" required> </span><br>
+						</span>
+						<span class="page1__form_error_alert" id="page1-error-name"></span><br>
+						<span class="input_field">
+						 	<span class="page1__input_field_label">Email</span> 
+						 	<span class="page1__input_field_text"><input type="email" name="email" placeholder="Email" id="page1-email" required> </span><br>
+						</span>
+						<span class="page1__form_error_alert" id="page1-error-email"></span><br>
 						<span class="input_field" id="radio"> 
-							What are you? 
-							<input type="radio" name="qualification" id="radio-uni" value="University Student" required>
-								University Student.
-							<input type="radio" name="qualification" id="radio-prof" value="Professional" required>
-								Professional
+							<span class="page1__input_field_label">What are you?</span> 
+							<span class="page1__input_field_text">
+								<input type="radio" name="qualification" id="radio-uni" value="University Student" required>
+									University Student.
+								<input type="radio" name="qualification" id="radio-prof" value="Professional" required>
+									Professional
+							</span>
 							<br>
 						</span>
-						<span class="input_field"> University <input type="text" name="university" placeholder="University" id="page1-university" required><br></span>
-						<span class="input_field"> Major <input type="text" name="major" placeholder="Major" id="page1-major"><br></span>
-						<span class="input_field" id="select-graduation"> Graduation Date 
-							<select id="graduation" name="graduation">
-								<option>Select Graduation date</option>
-						
-							</select><br></span>
+						<span class="page1__form_error_alert" id="page1-error-radio"></span><br>
+						<span class="input_field">
+						 	<span class="page1__input_field_label">University</span> 
+						 	<span class="page1__input_field_text">
+						 		<input type="text" name="university" placeholder="University" id="page1-university" required>
+						 	</span><br>
+						 </span>
+						 <span class="page1__form_error_alert" id="page1-error-uni"></span><br>
+						<span class="input_field"> 
+							<span class="page1__input_field_label">Major</span> 
+							<span class="page1__input_field_text">
+								<input type="text" name="major" placeholder="Major" id="page1-major">
+							</span><br>
+						</span>
+						<span class="page1__form_error_alert" id="page1-error-major"></span><br>
+						<span class="input_field" id="select-graduation"> 
+							<span class="page1__input_field_label">Graduation Date </span>
+							<span class="page1__input_field_text">
+								<select id="graduation" name="graduation">
+									<option>Select Graduation date</option>
+							
+								</select>
+							</span>
+							<br></span>
+							<span class="page1__form_error_alert" id="page1-error-graduation"></span><br>
 						<span class="input_field" id="radio-2"> 
-							Do you have a tax id? 
-							<input type="radio" name="tax" id="radio-tax" value="I have a tax id">
-								I have a tax id
-							<input type="radio" name="tax" id="radio-notax" value="I don't have a tax id">
-								I don't have a tax id 
+							<span class="page1__input_field_label">Do you have a tax id? </span>
+							<span class="page1__input_field_text">
+								<input type="radio" name="tax" id="radio-tax" value="I have a tax id">
+									I have a tax id
+								<input type="radio" name="tax" id="radio-notax" value="I don't have a tax id">
+									I don't have a tax id 
+							</span>
 							<br>
 						</span>
-						<span class="input_field"> Mobile <input type="text" name="mobile" id="page1-mobile" required><br></span>
+						<span class="page1__form_error_alert" id="page1-error-radio"></span><br>
+						<span class="input_field"> 
+							<span class="page1__input_field_label">Mobile</span> 
+							<span class="page1__input_field_text">
+								<input type="number" maxlength="10" name="mobile" id="page1-mobile" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+							</span><br>
+						</span>
+						<span class="page1__form_error_alert" id="page1-error-mobile"></span><br>
 					</div>
 				</form>
 			</div>
 			<div class="body__container_wrapper_page" id="page-2">
 				<form name="page-2_form" id="page-2_form" method="post">
 					<div class="page2__form">
-						<span class="input_field" id="about-you"> About You <textarea name="about" id="about" rows="5" cols="22" placeholder="write a short bio" required></textarea><br></span>
-						<span class="input_field"> Teaching Experience <textarea name="experience" id="experience" rows="5" cols="22" required placeholder="tell us about your teaching experience"></textarea>	</span><br>
-						<span class="input_field" id="add-job"> Work History <input type="text" name="history" id="work-history" placeholder="Company"><br>
-								<select class="dropdown" id="active-from" name="active-from">
-									<option selected disabled value="">Active from</option>
-								</select> 
-								<select class="dropdown" id="active-to" name="active-to">
-									<option>Active to</option>
-								</select>
+						<span class="input_field" id="about-you"> 
+							<span class="page2__input_field_label">About You</span> 
+							<span class="page2__input_field_text">
+								<textarea name="about" id="about" rows="5" cols="22" placeholder="write a short bio" required></textarea>
+							</span>
+						<br></span>
+						<span class="input_field"> 
+							<span class="page2__input_field_label"> Teaching Experience </span> 
+							<span class="page2__input_field_text"> <textarea name="experience" id="experience" rows="5" cols="22" required placeholder="tell us about your teaching experience"></textarea>	
+							</span>
 						</span><br>
-
-						<a class="page2__form_link" id="link-job"> + Add Another job</a><br><br>
-						<span class="input_field" id="add-education"> Education <input type="text" name="education" id="education" placeholder="School"><br>
-							
-								<select class="dropdown" id="enrolled" name="enrolled">
-									<option value="" disabled selected>Enrolled</option>
-								</select> 
-								<select class="dropdown" id="graduated" name="graduated">
-									<option value="" disabled selected>Graduated</option>
-								</select>
+						<span class="input_field" id="add-job"> 
+							<span class="page2__input_field_label"> Work History </span>
+							<span class="page2__input_field_text" id="page2-add-job"> 
+								<input type="text" name="history" id="work-history" placeholder="Company"><br>
+								<span>
+									<select class="dropdown" id="active-from" name="active-from">
+										<option selected disabled value="">Active from</option>
+									</select> 
+									<select class="dropdown" id="active-to" name="active-to">
+										<option selected disabled value="">Active to</option>
+									</select>
+								</span>
+							</span>
 						</span><br>
-						<a class="page2__form_link" id="link-education"> + Add Another School</a><br><br>
+						<span class="page2__link_container">
+							<a class="page2__form_link" id="link-job"> + Add Another job</a>
+						</span><br><br>
+						<span class="input_field" id="add-education"> 
+							<span class="page2__input_field_label">Education </span>
+							<span class="page2__input_field_text" id="page2-add-education">
+								<input type="text" name="education" id="education" placeholder="School"><br>
+								<span>
+									<select class="dropdown" id="enrolled" name="enrolled">
+										<option value="" disabled selected>Enrolled</option>
+									</select> 
+									<select class="dropdown" id="graduated" name="graduated">
+										<option value="" disabled selected>Graduated</option>
+									</select>
+								</span>
+							</span>
+						</span><br>
+						<span class="page2__link_container">
+							<a class="page2__form_link" id="link-education"> + Add Another School</a><br><br>
+						</span>
 					</div>
 				</form>
 			</div>
@@ -222,6 +279,12 @@
 					</div>
 			</div>
 		</div>
+
+		<div class="body__container_wrapper_page" id="page-5">
+			<h1 class="body__container_wrapper_page_heading">Thank you for submitting the form</h1>
+
+			<button id="button-home"> Go Back to Home</button>
+		</div>
 	</div>
 
 	<div class="footer__container">
@@ -243,6 +306,6 @@
 	<script src="../javascript/storage.js"></script>
 	<script src="../javascript/page3.js"></script>
 	<script src="../javascript/main.js"></script>
-
+	<script src="../javascript/ErrorAlerts.js"></script>
 </body>
 </html>

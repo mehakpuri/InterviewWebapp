@@ -4,14 +4,13 @@
 	/*background-color:green;*/
 }
 #page4-sidebar {
-
- /* background-color: #f1f1f1;*/
 	  width: 32%;
 	  margin: 10px;
 	  text-align: center;
 	  line-height: 35px;
 	  display: flex;
 	  flex-direction: column;
+	  
 }
 
 #page4-sidebar div {
@@ -35,13 +34,14 @@
 .page4__items_tick{
 	color:grey;
 	margin-left: 6%;
+	margin-right: 2%;
 }
 #ques-link-1{
 	color:black;
 	font-weight: bold;
 }
 .page4__items{
-	margin-left: 2%;
+	margin-left: 4%;
 }
 .page4__items_heading{
 	font-size: 23px;
