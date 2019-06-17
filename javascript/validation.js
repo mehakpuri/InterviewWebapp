@@ -94,7 +94,7 @@ function commonValidation(pageId) {
 				document.getElementById('page1-error-graduation').style.display = 'none'
 			}
 			else if(field[i].name == 'active-from' && field[i].value == ''){
-				console.log("active from **********")
+				
 				message = 'Active From cannot be empty'
 				flag = 1
 				document.getElementById('page2-error-active').innerHTML = message
